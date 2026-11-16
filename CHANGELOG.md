@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/aifivem/ai-vehicles/compare/v0.3.0...v0.4.0) (2026-11-16)
+
+
+### New Features
+
+* **vehicles:** store and restore vehicle damage on FiveM Enhanced (damage column, every store path) ([731fd4c](https://github.com/aifivem/ai-vehicles/commit/731fd4c5e37811bdc5ca2fe74df83321d07de7fe))
+
+
+### Code Refactoring
+
+* **vehicles:** shorter store update type, damage notes ([409c66c](https://github.com/aifivem/ai-vehicles/commit/409c66c89bc74b2f0fb7eeee78e9c72c2e41c78b))
+
 ## [0.3.0](https://github.com/aifivem/ai-vehicles/compare/v0.2.2...v0.3.0) (2026-11-02)
 
 
