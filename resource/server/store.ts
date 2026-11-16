@@ -177,19 +177,7 @@ class VehicleStore {
 
   update(
     id: number,
-    change: Partial<
-      Pick<
-        OwnedVehicle,
-        | "props"
-        | "setup"
-        | "state"
-        | "garage"
-        | "fuel"
-        | "engine"
-        | "body"
-        | "damage"
-      >
-    >,
+    change: Partial<Omit<OwnedVehicle, "id" | "plate" | "owner" | "model">>,
   ): void {
     const vehicle = this.byId.get(id);
     if (!vehicle) return;
