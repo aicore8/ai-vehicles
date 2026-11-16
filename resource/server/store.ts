@@ -166,6 +166,7 @@ class VehicleStore {
       fuel: 100,
       engine: 1000,
       body: 1000,
+      damage: null,
     };
     this.add(vehicle);
     this.writes.push(`create ${id}`, () =>
@@ -179,7 +180,14 @@ class VehicleStore {
     change: Partial<
       Pick<
         OwnedVehicle,
-        "props" | "setup" | "state" | "garage" | "fuel" | "engine" | "body"
+        | "props"
+        | "setup"
+        | "state"
+        | "garage"
+        | "fuel"
+        | "engine"
+        | "body"
+        | "damage"
       >
     >,
   ): void {

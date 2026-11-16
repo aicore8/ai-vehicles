@@ -1,17 +1,12 @@
-import { fuel, garages } from "@aifivem/lib/server";
+import { garages, vehicleCondition } from "@aifivem/lib/server";
 import { cleanupSettings } from "../content";
 import { vehicles } from "../store";
 import { world } from "../world";
 import { spotAt } from "./settings";
 
-/** Fuel and damage read on the server, saved before an owned vehicle leaves the world. */
+/** Fuel and damage read on the server (lib `vehicleCondition`), saved before an owned vehicle leaves the world. */
 function saveCondition(id: number, entity: number): void {
-  const level = fuel.get(entity);
-  vehicles.update(id, {
-    engine: GetVehicleEngineHealth(entity),
-    body: GetVehicleBodyHealth(entity),
-    ...(level !== null ? { fuel: level } : {}),
-  });
+  vehicles.update(id, vehicleCondition(entity));
 }
 
 /**

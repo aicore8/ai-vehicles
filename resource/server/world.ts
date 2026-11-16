@@ -6,7 +6,11 @@ import {
   stateBoolean,
   stateNumber,
 } from "@aifivem/lib/server";
-import { toVehicleProps, toVehicleSetup } from "@aifivem/lib/shared";
+import {
+  toVehicleDamage,
+  toVehicleProps,
+  toVehicleSetup,
+} from "@aifivem/lib/shared";
 import type { KeyPurpose } from "@aifivem/shared";
 import { BAGS } from "common/vehicles";
 import { log } from "./log";
@@ -75,6 +79,7 @@ class World {
     if (vehicle.props)
       bags[BAGS.props] = { ...vehicle.props, plate: vehicle.plate };
     const setup = vehicle.props ? null : toVehicleSetup(vehicle.setup);
+    const damage = toVehicleDamage(vehicle.damage);
     // Whoever takes it out gets the keys from the active key system (ai-vehiclekeys also knows owners by itself).
     const entity = await spawnVehicle({
       model: vehicle.model,
@@ -84,6 +89,8 @@ class World {
       fuel: vehicle.fuel,
       bags,
       ...(setup ? { setup } : {}),
+      // Enhanced: windows, tyres, lights... stored when it was parked (none on Legacy).
+      ...(damage ? { damage } : {}),
       keysTo: asker,
       purpose,
     });

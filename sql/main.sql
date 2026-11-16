@@ -8,6 +8,8 @@
 -- script, owner_id = the resource: a used car lot listing).
 -- state: garage (in `garage`), out (in the world), impound. props: VehicleProps JSON (@aifivem/lib).
 -- setup: VehicleSetup JSON a vehicle spawns with until its first props save (a shop's colour).
+-- damage: VehicleDamage JSON (@aifivem/lib: windows, tyres, lights, bumpers, tank) the server reads and restores on
+-- FiveM for GTAV Enhanced; NULL on Legacy.
 CREATE TABLE IF NOT EXISTS `ai_vehicles_owned` (
   `id` BIGINT UNSIGNED NOT NULL,
   `plate` VARCHAR(8) NOT NULL,
@@ -21,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `ai_vehicles_owned` (
   `fuel` FLOAT NOT NULL DEFAULT 100,
   `engine` FLOAT NOT NULL DEFAULT 1000,
   `body` FLOAT NOT NULL DEFAULT 1000,
+  `damage` TEXT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `plate` (`plate`),

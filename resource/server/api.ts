@@ -1,8 +1,10 @@
 import {
   isRecord,
+  toVehicleDamage,
   toVehicleProps,
   toVehicleSetup,
 } from "@aifivem/lib/shared";
+import { enhanced } from "@aifivem/lib/server";
 import type { KeyPurpose } from "@aifivem/shared";
 import type { OwnedVehicle, Owner, VehicleState } from "common/vehicles";
 import { readAnyProps } from "./qbx/props";
@@ -58,7 +60,8 @@ const clamp = (v: unknown, min: number, max: number): number | undefined =>
 /**
  * Saves condition and look. Without `tuning` the stored `mods` and `neon` stay (none without stored props): only a
  * tuning shop (`SaveTuning`, ai-mechanic) changes them, so a client-read look never persists a mod menu's work. Stored
- * props end the vehicle's spawn setup (the props carry its colours now).
+ * props end the vehicle's spawn setup (the props carry its colours now). `damage`: null clears it, an invalid value
+ * or none keeps the stored one (msgpack turns `damage: undefined` into null: leave the key out instead).
  */
 export function saveVehicle(
   id: number,
@@ -67,6 +70,7 @@ export function saveVehicle(
     fuel?: unknown;
     engine?: unknown;
     body?: unknown;
+    damage?: unknown;
     state?: VehicleState;
     garage?: string | null;
   },
@@ -79,6 +83,10 @@ export function saveVehicle(
   const fuel = clamp(change.fuel, 0, 100);
   const engine = clamp(change.engine, -4000, 1000);
   const body = clamp(change.body, 0, 1000);
+  const damage =
+    change.damage === null
+      ? null
+      : (toVehicleDamage(change.damage) ?? undefined);
   vehicles.update(id, {
     ...(props
       ? {
@@ -98,6 +106,7 @@ export function saveVehicle(
     ...(fuel !== undefined ? { fuel } : {}),
     ...(engine !== undefined ? { engine } : {}),
     ...(body !== undefined ? { body } : {}),
+    ...(damage !== undefined ? { damage } : {}),
     ...(change.state ? { state: change.state } : {}),
     ...(change.garage !== undefined ? { garage: change.garage } : {}),
   });
@@ -127,8 +136,12 @@ export function storeVehicle(
   garage: string | null,
   state: VehicleState = "garage",
 ): void {
+  // Every store path (ai-garages, Qbox garages, third-party callers) keeps the damage the entity has now (Enhanced).
+  const entity = world.entityOf(id);
+  const damage =
+    entity !== undefined ? enhanced.readVehicleDamage(entity) : null;
   world.despawn(id);
-  vehicles.update(id, { state, garage });
+  vehicles.update(id, { state, garage, ...(damage ? { damage } : {}) });
 }
 
 /** Deletes a vehicle in memory: its entity and its row. */

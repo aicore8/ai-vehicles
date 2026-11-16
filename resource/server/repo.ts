@@ -1,5 +1,9 @@
 import { mysql } from "@aifivem/mysql";
-import { toVehicleProps, toVehicleSetup } from "@aifivem/lib/shared";
+import {
+  toVehicleDamage,
+  toVehicleProps,
+  toVehicleSetup,
+} from "@aifivem/lib/shared";
 import type {
   OwnedVehicle,
   Owner,
@@ -21,6 +25,7 @@ interface Row {
   fuel: number;
   engine: number;
   body: number;
+  damage: string | null;
 }
 
 const isOwnerType = (v: string): v is OwnerType =>
@@ -32,11 +37,17 @@ export function fromRow(row: Row): OwnedVehicle | null {
   if (!isOwnerType(row.owner_type)) return null;
   let props = null;
   let setup = null;
+  let damage = null;
   try {
     props = row.props ? toVehicleProps(JSON.parse(row.props)) : null;
     setup = row.setup ? toVehicleSetup(JSON.parse(row.setup)) : null;
   } catch (error) {
     log.error(`vehicle ${row.id} has broken props`, error);
+  }
+  try {
+    damage = row.damage ? toVehicleDamage(JSON.parse(row.damage)) : null;
+  } catch (error) {
+    log.error(`vehicle ${row.id} has broken damage`, error);
   }
   return {
     id: Number(row.id),
@@ -50,6 +61,7 @@ export function fromRow(row: Row): OwnedVehicle | null {
     fuel: row.fuel,
     engine: row.engine,
     body: row.body,
+    damage,
   };
 }
 
@@ -85,7 +97,7 @@ export const insertVehicle = (
 
 export const updateVehicle = (id: number, v: OwnedVehicle) =>
   mysql.query(
-    "UPDATE ai_vehicles_owned SET props = ?, setup = ?, state = ?, garage = ?, fuel = ?, engine = ?, body = ? WHERE id = ?",
+    "UPDATE ai_vehicles_owned SET props = ?, setup = ?, state = ?, garage = ?, fuel = ?, engine = ?, body = ?, damage = ? WHERE id = ?",
     [
       v.props ? JSON.stringify(v.props) : null,
       v.setup ? JSON.stringify(v.setup) : null,
@@ -94,6 +106,7 @@ export const updateVehicle = (id: number, v: OwnedVehicle) =>
       v.fuel,
       v.engine,
       v.body,
+      v.damage ? JSON.stringify(v.damage) : null,
       id,
     ],
   );

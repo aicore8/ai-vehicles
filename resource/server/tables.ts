@@ -15,6 +15,7 @@ export type Tables = {
     fuel: number;
     engine: number;
     body: number;
+    damage: string | null;
     created_at: number;
   };
 };
@@ -34,6 +35,7 @@ export type TableInserts = {
     fuel?: number;
     engine?: number;
     body?: number;
+    damage?: string | null;
     created_at?: number;
   };
 };
