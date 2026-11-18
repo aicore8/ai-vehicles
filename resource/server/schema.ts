@@ -1,4 +1,4 @@
-import type { PanelSchema } from "@aifivem/shared";
+import type { PanelSchema } from "@aicore8/shared";
 import { DEFAULT_SPOTS } from "./cleanup/settings";
 
 /** ai-vehicles' panel: what happens to vehicles players leave behind. */

@@ -1,4 +1,4 @@
-import { bool, flatDistance, int, num, record, str } from "@aifivem/lib/shared";
+import { bool, flatDistance, int, num, record, str } from "@aicore8/lib/shared";
 
 /** A place where a vehicle left behind goes sooner (a garage's parking area); `garage` = the garage script's id. */
 export interface GarageSpot {

@@ -6,7 +6,7 @@ import {
   stateNumber,
   vehicleOf,
   type Job,
-} from "@aifivem/lib/server";
+} from "@aicore8/lib/server";
 import { Locale } from "common";
 import { ABANDON_BAG } from "common/vehicles";
 import { cleanupSettings, panel } from "../content";

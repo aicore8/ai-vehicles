@@ -1,79 +1,79 @@
 # Changelog
 
-## [0.4.0](https://github.com/aifivem/ai-vehicles/compare/v0.3.0...v0.4.0) (2026-11-16)
+## [0.4.0](https://github.com/aicore8/ai-vehicles/compare/v0.3.0...v0.4.0) (2026-11-16)
 
 
 ### New Features
 
-* **vehicles:** store and restore vehicle damage on FiveM Enhanced (damage column, every store path) ([731fd4c](https://github.com/aifivem/ai-vehicles/commit/731fd4c5e37811bdc5ca2fe74df83321d07de7fe))
+* **vehicles:** store and restore vehicle damage on FiveM Enhanced (damage column, every store path) ([731fd4c](https://github.com/aicore8/ai-vehicles/commit/731fd4c5e37811bdc5ca2fe74df83321d07de7fe))
 
 
 ### Code Refactoring
 
-* **vehicles:** shorter store update type, damage notes ([409c66c](https://github.com/aifivem/ai-vehicles/commit/409c66c89bc74b2f0fb7eeee78e9c72c2e41c78b))
+* **vehicles:** shorter store update type, damage notes ([409c66c](https://github.com/aicore8/ai-vehicles/commit/409c66c89bc74b2f0fb7eeee78e9c72c2e41c78b))
 
-## [0.3.0](https://github.com/aifivem/ai-vehicles/compare/v0.2.2...v0.3.0) (2026-11-02)
+## [0.3.0](https://github.com/aicore8/ai-vehicles/compare/v0.2.2...v0.3.0) (2026-11-02)
 
 
 ### New Features
 
-* **vehicles:** adopt a world vehicle as an owned vehicle with its plate and look ([e96e5ec](https://github.com/aifivem/ai-vehicles/commit/e96e5ecad0ff95846bb2b6df2a8b8b05c51b16c0))
-* **vehicles:** remove left vehicles and delete owned vehicles by plate ([fd23938](https://github.com/aifivem/ai-vehicles/commit/fd23938a402cb4c5c15eab2599251cd726c5b376))
+* **vehicles:** adopt a world vehicle as an owned vehicle with its plate and look ([e96e5ec](https://github.com/aicore8/ai-vehicles/commit/e96e5ecad0ff95846bb2b6df2a8b8b05c51b16c0))
+* **vehicles:** remove left vehicles and delete owned vehicles by plate ([fd23938](https://github.com/aicore8/ai-vehicles/commit/fd23938a402cb4c5c15eab2599251cd726c5b376))
 
 
 ### Bug Fixes
 
-* **vehicles:** set a custom plate on the game thread ([8e1c219](https://github.com/aifivem/ai-vehicles/commit/8e1c219259e8263c4f2b1a521fe13530e94f9fb0))
+* **vehicles:** set a custom plate on the game thread ([8e1c219](https://github.com/aicore8/ai-vehicles/commit/8e1c219259e8263c4f2b1a521fe13530e94f9fb0))
 
 
 ### Miscellaneous Chores
 
-* **data:** write the new settings defaults and panel schemas ([db5668d](https://github.com/aifivem/ai-vehicles/commit/db5668d185135598843d80b4ff9817254803cd66))
+* **data:** write the new settings defaults and panel schemas ([db5668d](https://github.com/aicore8/ai-vehicles/commit/db5668d185135598843d80b4ff9817254803cd66))
 
-## [0.2.2](https://github.com/aifivem/ai-vehicles/compare/v0.2.1...v0.2.2) (2026-11-02)
+## [0.2.2](https://github.com/aicore8/ai-vehicles/compare/v0.2.1...v0.2.2) (2026-11-02)
 
 
 ### Documentation
 
-* install from the release zip ([e37019c](https://github.com/aifivem/ai-vehicles/commit/e37019cf3605d36ba0cb0b8de68274b4e4215e53))
+* install from the release zip ([e37019c](https://github.com/aicore8/ai-vehicles/commit/e37019cf3605d36ba0cb0b8de68274b4e4215e53))
 
 
 ### Miscellaneous Chores
 
-* build files are no longer in git, the release zip carries them ([27c477a](https://github.com/aifivem/ai-vehicles/commit/27c477aca19841ae5605ccdc6da584da92cf87da))
+* build files are no longer in git, the release zip carries them ([27c477a](https://github.com/aicore8/ai-vehicles/commit/27c477aca19841ae5605ccdc6da584da92cf87da))
 
-## [0.2.1](https://github.com/aifivem/ai-vehicles/compare/v0.2.0...v0.2.1) (2026-11-02)
+## [0.2.1](https://github.com/aicore8/ai-vehicles/compare/v0.2.0...v0.2.1) (2026-11-02)
 
 
 ### Code Refactoring
 
-* import the shared packages from [@aifivem](https://github.com/aifivem) ([ac7b04e](https://github.com/aifivem/ai-vehicles/commit/ac7b04e1a256281345284f2c2a68b8752b70e961))
+* import the shared packages from [@aicore8](https://github.com/aicore8) ([ac7b04e](https://github.com/aicore8/ai-vehicles/commit/ac7b04e1a256281345284f2c2a68b8752b70e961))
 
-## [0.2.0](https://github.com/aifivem/ai-vehicles/compare/v0.1.3...v0.2.0) (2026-11-01)
+## [0.2.0](https://github.com/aicore8/ai-vehicles/compare/v0.1.3...v0.2.0) (2026-11-01)
 
 
 ### New Features
 
-* **vehicles:** accept and hand out ox_lib / qb-core shaped props ([b837007](https://github.com/aifivem/ai-vehicles/commit/b83700714bce954e7be4d794f2013a6c98d1530d))
-* **vehicles:** custom plates and lookups of owners who are not online ([bcbe9a3](https://github.com/aifivem/ai-vehicles/commit/bcbe9a3260284b3e3e190a09170007ff6f851883))
+* **vehicles:** accept and hand out ox_lib / qb-core shaped props ([b837007](https://github.com/aicore8/ai-vehicles/commit/b83700714bce954e7be4d794f2013a6c98d1530d))
+* **vehicles:** custom plates and lookups of owners who are not online ([bcbe9a3](https://github.com/aicore8/ai-vehicles/commit/bcbe9a3260284b3e3e190a09170007ff6f851883))
 
-## [0.1.3](https://github.com/aifivem/ai-vehicles/compare/v0.1.2...v0.1.3) (2026-11-01)
+## [0.1.3](https://github.com/aicore8/ai-vehicles/compare/v0.1.2...v0.1.3) (2026-11-01)
 
 
 ### Code Refactoring
 
-* feature folders, side entries that only import, panel schema per tab ([0ce5f34](https://github.com/aifivem/ai-vehicles/commit/0ce5f34536daa3bbcd2936e0b3f90c4f6c74f544))
+* feature folders, side entries that only import, panel schema per tab ([0ce5f34](https://github.com/aicore8/ai-vehicles/commit/0ce5f34536daa3bbcd2936e0b3f90c4f6c74f544))
 
-## [0.1.2](https://github.com/aifivem/ai-vehicles/compare/v0.1.1...v0.1.2) (2026-10-31)
-
-
-### Miscellaneous Chores
-
-* rebuild with the current lib ([f4161f0](https://github.com/aifivem/ai-vehicles/commit/f4161f05e114a882ff855fad96e387368940088d))
-
-## [0.1.1](https://github.com/aifivem/ai-vehicles/compare/v0.1.0...v0.1.1) (2026-10-31)
+## [0.1.2](https://github.com/aicore8/ai-vehicles/compare/v0.1.1...v0.1.2) (2026-10-31)
 
 
 ### Miscellaneous Chores
 
-* rebuild with the current lib ([d1e0d54](https://github.com/aifivem/ai-vehicles/commit/d1e0d54f1103711bc99d1b67ce440effbdb060d4))
+* rebuild with the current lib ([f4161f0](https://github.com/aicore8/ai-vehicles/commit/f4161f05e114a882ff855fad96e387368940088d))
+
+## [0.1.1](https://github.com/aicore8/ai-vehicles/compare/v0.1.0...v0.1.1) (2026-10-31)
+
+
+### Miscellaneous Chores
+
+* rebuild with the current lib ([d1e0d54](https://github.com/aicore8/ai-vehicles/commit/d1e0d54f1103711bc99d1b67ce440effbdb060d4))

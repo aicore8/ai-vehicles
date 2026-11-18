@@ -1,4 +1,4 @@
-import { fuel, plateOf, registerExport } from "@aifivem/lib/server";
+import { fuel, plateOf, registerExport } from "@aicore8/lib/server";
 import { isCustomPlate, type AdoptVehicleResult } from "common/vehicles";
 import { saveVehicle, toOwner } from "./api";
 import { log } from "./log";
@@ -64,7 +64,7 @@ async function adoptVehicle(
   return { ok: true, id: vehicle.id, plate: vehicle.plate };
 }
 
-/** `done({ ok: true, id, plate } | { ok: false, error })`: see `AdoptVehicleResult` in `@aifivem/shared`. */
+/** `done({ ok: true, id, plate } | { ok: false, error })`: see `AdoptVehicleResult` in `@aicore8/shared`. */
 registerExport(
   "AdoptVehicle",
   (

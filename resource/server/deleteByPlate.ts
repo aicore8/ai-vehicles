@@ -1,5 +1,5 @@
-import { plateOf } from "@aifivem/lib/server";
-import { normalizePlate } from "@aifivem/lib/shared";
+import { plateOf } from "@aicore8/lib/server";
+import { normalizePlate } from "@aicore8/lib/shared";
 import type { DeleteByPlateResult } from "common/vehicles";
 import { deleteVehicle } from "./api";
 import { log } from "./log";

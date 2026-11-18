@@ -1,4 +1,4 @@
-import { garages, vehicleCondition } from "@aifivem/lib/server";
+import { garages, vehicleCondition } from "@aicore8/lib/server";
 import { cleanupSettings } from "../content";
 import { vehicles } from "../store";
 import { world } from "../world";

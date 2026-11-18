@@ -1,5 +1,5 @@
-import { WriteQueue } from "@aifivem/lib/server";
-import { normalizePlate } from "@aifivem/lib/shared";
+import { WriteQueue } from "@aicore8/lib/server";
+import { normalizePlate } from "@aicore8/lib/shared";
 import {
   isCustomPlate,
   plateFromId,

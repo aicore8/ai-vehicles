@@ -3,9 +3,9 @@ import {
   toVehicleDamage,
   toVehicleProps,
   toVehicleSetup,
-} from "@aifivem/lib/shared";
-import { enhanced } from "@aifivem/lib/server";
-import type { KeyPurpose } from "@aifivem/shared";
+} from "@aicore8/lib/shared";
+import { enhanced } from "@aicore8/lib/server";
+import type { KeyPurpose } from "@aicore8/shared";
 import type { OwnedVehicle, Owner, VehicleState } from "common/vehicles";
 import { readAnyProps } from "./qbx/props";
 import { vehicles } from "./store";

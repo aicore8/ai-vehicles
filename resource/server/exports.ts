@@ -1,6 +1,6 @@
-import { registerExport } from "@aifivem/lib/server";
-import { isRecord, readFinite, toVehicleProps } from "@aifivem/lib/shared";
-import { toKeyPurpose } from "@aifivem/shared";
+import { registerExport } from "@aicore8/lib/server";
+import { isRecord, readFinite, toVehicleProps } from "@aicore8/lib/shared";
+import { toKeyPurpose } from "@aicore8/shared";
 import type { DeleteByPlateResult, VehicleState } from "common/vehicles";
 import {
   createVehicle,

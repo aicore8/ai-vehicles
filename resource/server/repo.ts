@@ -1,9 +1,9 @@
-import { mysql } from "@aifivem/mysql";
+import { mysql } from "@aicore8/mysql";
 import {
   toVehicleDamage,
   toVehicleProps,
   toVehicleSetup,
-} from "@aifivem/lib/shared";
+} from "@aicore8/lib/shared";
 import type {
   OwnedVehicle,
   Owner,

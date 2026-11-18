@@ -1,5 +1,5 @@
-import { provideExport, resourceExport } from "@aifivem/lib/server";
-import { isRecord } from "@aifivem/lib/shared";
+import { provideExport, resourceExport } from "@aicore8/lib/server";
+import { isRecord } from "@aicore8/lib/shared";
 import type { OwnedVehicle } from "common/vehicles";
 import { createVehicle, deleteVehicle, find, saveVehicle } from "../api";
 import { vehicles } from "../store";

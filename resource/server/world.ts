@@ -5,13 +5,13 @@ import {
   spawnVehicle,
   stateBoolean,
   stateNumber,
-} from "@aifivem/lib/server";
+} from "@aicore8/lib/server";
 import {
   toVehicleDamage,
   toVehicleProps,
   toVehicleSetup,
-} from "@aifivem/lib/shared";
-import type { KeyPurpose } from "@aifivem/shared";
+} from "@aicore8/lib/shared";
+import type { KeyPurpose } from "@aicore8/shared";
 import { BAGS } from "common/vehicles";
 import { log } from "./log";
 import { vehicles } from "./store";
